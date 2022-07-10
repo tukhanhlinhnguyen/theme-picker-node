@@ -13,10 +13,7 @@ app.get("/color", cors(corsOptions), async (request, response) => {
     const theme = await ThemeModel.find({
       "color": {
         $in: ["black"]
-      }})
-      .limit(5);
-    console.log('theme:', theme)
-  
+      }});
     try {
       response.send(theme);
     } catch (error) {
